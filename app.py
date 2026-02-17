@@ -405,19 +405,22 @@ if submitted:
                         pe_eval = stock_data["peEvaluation"]
                         status_icon = get_status_icon(pe_eval['status'])
                         st.markdown(f"**P/E Ratio** {status_icon}")
-                        st.markdown(f"<h3>{pe_eval['value']:.2f if pe_eval['value'] is not None else 'N/A'}</h3>", unsafe_allow_html=True)
+                        pe_value = f"{pe_eval['value']:.2f}" if pe_eval['value'] is not None else "N/A"
+                        st.markdown(f"<h3>{pe_value}</h3>", unsafe_allow_html=True)
                         st.caption(pe_eval['label'])
                         
                         eps_eval = stock_data["epsEvaluation"]
                         status_icon = get_status_icon(eps_eval['status'])
                         st.markdown(f"**EPS (TTM)** {status_icon}")
-                        st.markdown(f"<h3>${eps_eval['value']:.2f if eps_eval['value'] is not None else 'N/A'}</h3>", unsafe_allow_html=True)
+                        eps_value = f"${eps_eval['value']:.2f}" if eps_eval['value'] is not None else "N/A"
+                        st.markdown(f"<h3>{eps_value}</h3>", unsafe_allow_html=True)
                         st.caption(eps_eval['label'])
                         
                         price_pos_eval = stock_data["pricePositionEvaluation"]
                         status_icon = get_status_icon(price_pos_eval['status'])
                         st.markdown(f"**52-Week Position** {status_icon}")
-                        st.markdown(f"<h3>{price_pos_eval['value']:.1f}%</h3>" if price_pos_eval['value'] is not None else "<h3>N/A</h3>", unsafe_allow_html=True)
+                        pos_value = f"{price_pos_eval['value']:.1f}%" if price_pos_eval['value'] is not None else "N/A"
+                        st.markdown(f"<h3>{pos_value}</h3>", unsafe_allow_html=True)
                         st.caption(price_pos_eval['label'])
                         
                         analyst_eval = stock_data["analystEvaluation"]
@@ -430,19 +433,22 @@ if submitted:
                         profit_margin_eval = stock_data["profitMarginEvaluation"]
                         status_icon = get_status_icon(profit_margin_eval['status'])
                         st.markdown(f"**Profit Margin** {status_icon}")
-                        st.markdown(f"<h3>{profit_margin_eval['value']:.2f}%</h3>" if profit_margin_eval['value'] is not None else "<h3>N/A</h3>", unsafe_allow_html=True)
+                        pm_value = f"{profit_margin_eval['value']:.2f}%" if profit_margin_eval['value'] is not None else "N/A"
+                        st.markdown(f"<h3>{pm_value}</h3>", unsafe_allow_html=True)
                         st.caption(profit_margin_eval['label'])
                         
                         debt_to_equity_eval = stock_data["debtToEquityEvaluation"]
                         status_icon = get_status_icon(debt_to_equity_eval['status'])
                         st.markdown(f"**Debt-to-Equity** {status_icon}")
-                        st.markdown(f"<h3>{debt_to_equity_eval['value']:.2f if debt_to_equity_eval['value'] is not None else 'N/A'}</h3>", unsafe_allow_html=True)
+                        dte_value = f"{debt_to_equity_eval['value']:.2f}" if debt_to_equity_eval['value'] is not None else "N/A"
+                        st.markdown(f"<h3>{dte_value}</h3>", unsafe_allow_html=True)
                         st.caption(debt_to_equity_eval['label'])
                         
                         beta_eval = stock_data["betaEvaluation"]
                         status_icon = get_status_icon(beta_eval['status'])
                         st.markdown(f"**Beta (Volatility)** {status_icon}")
-                        st.markdown(f"<h3>{beta_eval['value']:.2f if beta_eval['value'] is not None else 'N/A'}</h3>", unsafe_allow_html=True)
+                        beta_value = f"{beta_eval['value']:.2f}" if beta_eval['value'] is not None else "N/A"
+                        st.markdown(f"<h3>{beta_value}</h3>", unsafe_allow_html=True)
                         st.caption(beta_eval['label'])
                 
                     st.markdown("---")
