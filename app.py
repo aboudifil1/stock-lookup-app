@@ -383,19 +383,19 @@ if submitted:
                     with col4:
                         st.markdown("**P/E (TTM)**")
                         st.markdown(f"<h3 style='color: #1f2937; margin: 0;'>{stock_data['peTTM']:.2f}</h3>", unsafe_allow_html=True)
-                
-                # Buy Signal
-                buy_signal = stock_data["buySignal"]
-                rec = buy_signal["recommendation"]
-                rec_text = {
-                    "buy": "Looks like a BUY",
-                    "hold": "HOLD / Do more research",
-                    "avoid": "Caution, potential AVOID"
-                }.get(rec, "HOLD")
-                
-                signal_color = {"buy": "🟢", "hold": "🟡", "avoid": "🔴"}.get(rec, "🟡")
-                st.info(f"{signal_color} **{rec_text}** | Score: {buy_signal['greens']} ✅ | {buy_signal['yellows']} ⚠️ | {buy_signal['reds']} 🔴")
-                
+                    
+                    # Buy Signal
+                    buy_signal = stock_data["buySignal"]
+                    rec = buy_signal["recommendation"]
+                    rec_text = {
+                        "buy": "Looks like a BUY",
+                        "hold": "HOLD / Do more research",
+                        "avoid": "Caution, potential AVOID"
+                    }.get(rec, "HOLD")
+                    
+                    signal_color = {"buy": "🟢", "hold": "🟡", "avoid": "🔴"}.get(rec, "🟡")
+                    st.info(f"{signal_color} **{rec_text}** | Score: {buy_signal['greens']} ✅ | {buy_signal['yellows']} ⚠️ | {buy_signal['reds']} 🔴")
+                    
                     st.markdown("---")
                     # Investment Metrics
                     st.subheader("Investment Metrics")
